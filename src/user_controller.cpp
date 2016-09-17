@@ -27,7 +27,8 @@ void UserController::createUser(const crow::request& req, crow::response& res)
     user["position_id"] = body["position_id"];
     user["position"] = body["position"];
 
-    auto ok = database->insert("user:" + user["email"].dump(), user);
+    std::string email = user["email"];
+    auto ok = database->insert("user:" + email, user);
     if (!ok) {
         res.code = 500;
         res.end();
