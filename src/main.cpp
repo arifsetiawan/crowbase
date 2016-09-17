@@ -7,7 +7,6 @@
 #include <sstream>
 
 #include "user_controller.hpp"
-#include "database.hpp"
 #include "configuration.hpp"
 
 using namespace std;
@@ -35,11 +34,11 @@ int main()
     });
 
     CROW_ROUTE(app, "/users/<string>")
-        .methods("PATCH"_method,
+        .methods("POST"_method,
                  "GET"_method,
                  "DELETE"_method)
     ([&userController](const crow::request& req, crow::response& res, const std::string& id) {
-        if (req.method == "PATCH"_method) 
+        if (req.method == "POST"_method) 
             userController->updateUser(req, res, id);
         else if (req.method == "GET"_method) 
             userController->getUser(req, res, id);
@@ -51,7 +50,8 @@ int main()
         }
     });
 
-    auto port = Configuration::instance().get<std::string>("Server.port");
+    //auto port = Configuration::instance().get<std::string>("Server.port");
 
-    app.port(std::stoul(port,nullptr,0)).multithreaded().run();
+    //app.port(std::stoul(port,nullptr,0)).multithreaded().run();
+    app.port(18080).multithreaded().run();
 }

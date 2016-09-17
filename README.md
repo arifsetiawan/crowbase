@@ -23,7 +23,7 @@ If you are using Docker Machine, you might need to replace `localhost` with your
 
 ### Couchbase bucket
 
-Go to Couchbase dashboard at http://192.168.99.100:8091/. Create new bucket: Crowbase and use password: Test1234
+Go to Couchbase dashboard at http://192.168.99.100:8091/ (192.168.99.100 is my Docker Machine IP, yours might differ). Create new bucket and set password.
 
 ## Third party dependencies
 
@@ -104,11 +104,6 @@ Run the app
 
 ## Run tests
 
-In root directory
-
-```bash
-./test.sh
-```
 ## Authors
 
 * Nurul Arif Setiawan <n.arif.setiawan@gmail.com>
@@ -118,6 +113,7 @@ In root directory
 * Better CMake
 * More tests
 * Profiling
+* Dockerfile
 
 ## License
 
