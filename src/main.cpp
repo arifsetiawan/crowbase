@@ -58,8 +58,7 @@ int main()
         }
     });
 
-    //auto port = Configuration::instance().get<std::string>("Server.port");
-
-    //app.port(std::stoul(port,nullptr,0)).multithreaded().run();
-    app.port(18080).multithreaded().run();
+    auto port = Configuration::instance().get<std::string>("Server.port");
+    app.port(std::stoul(port,nullptr,0)).multithreaded().run();
+    
 }

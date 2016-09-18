@@ -6,4 +6,4 @@ bucket = "gobase"
 password = "Test1234"
 
 [Server]
-port = 18080
+port = "18080"
