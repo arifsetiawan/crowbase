@@ -111,10 +111,9 @@ Run the app
 ## Known issues
 
 * Better CMake
-* More tests
-* Profiling
+* Write tests
 * Dockerfile
-* Concurrent request (see below)
+* Concurrent request handling (see below)
 
 ### Concurrent request
 
