@@ -19,6 +19,14 @@ int main()
     auto database = std::make_shared<DatabaseClient>();
     auto userController = std::make_shared<UserController>(database);
 
+    CROW_ROUTE(app, "/hello")
+        .methods("GET"_method)
+    ([](const crow::request& req, crow::response& res) {
+        res.body = "world";
+        res.code = 200;
+        res.end();
+    });
+
     CROW_ROUTE(app, "/users")
         .methods("POST"_method,
                  "GET"_method)
