@@ -27,7 +27,7 @@ Go to Couchbase dashboard at http://192.168.99.100:8091/ (192.168.99.100 is my D
 
 ## Third party dependencies
 
-To be able to compile this project, you need to download all external dependencies.
+To be able to compile this project, you need to download all external dependencies. We will put all external dependencies into `external` folder.
 
 **Note** I use OSX 10.11 with Compiler AppleClang 7.3.0.7030029
 
@@ -110,6 +110,7 @@ Run the app
 
 ## Known issues
 
+* Middleware example
 * Better CMake
 * Write tests
 * Dockerfile
