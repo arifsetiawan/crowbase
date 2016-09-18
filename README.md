@@ -104,6 +104,22 @@ Run the app
 
 ## Run tests
 
+Integration test is written in Node.js, because I know it better than C++ test frameworks. Make sure to install Node.js first
+
+```
+cd test
+npm install
+```
+
+Run with 
+```
+npm run integration -loglevel silent
+```
+
+### Couchbase clean bucket
+
+We need to make sure bucket are reset everytime we run test. You need to create a view first. See http://blog.couchbase.com/mass-deleting-documents-by-compound-key-prefix-using-node-js
+
 ## Authors
 
 * Nurul Arif Setiawan <n.arif.setiawan@gmail.com>

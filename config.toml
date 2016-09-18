@@ -1,7 +1,0 @@
-
-[Database]
-url = "couchbase://192.168.99.100:8091/gobase"
-password = "Test1234"
-
-[Server]
-port = 18080

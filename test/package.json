@@ -1,0 +1,31 @@
+{
+  "name": "crowbase-test",
+  "version": "0.1.0",
+  "description": "Integration tests for crowbase",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arifsetiawan/crowbase.git"
+  },
+  "main": "app.js",
+  "keywords": [
+    "tdd",
+    "integration"
+  ],
+  "contributors": [
+    {
+      "name": "Nurul Arif Setiawan",
+      "email": "n.arif.setiawan@gmail.com"
+    }
+  ],
+  "license": "MIT",
+  "scripts": {
+    "integration": "CROWSIMPLE_ENV=test && node_modules/mocha/bin/mocha --reporter spec --timeout 10000 integration/**/*.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "couchbase": "^2.2.2",
+    "mocha": "^3.0.2",
+    "supertest": "^2.0.0",
+    "toml": "^2.3.0"
+  }
+}

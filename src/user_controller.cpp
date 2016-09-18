@@ -71,7 +71,7 @@ void UserController::getUsers(const crow::request& req, crow::response& res)
     responseBody["data"] = users;
     res.set_header("Content-Type", "application/json");
     res.body = responseBody.dump();
-    res.code = 201;
+    res.code = 200;
     res.end();
 }
 
