@@ -114,6 +114,43 @@ Run the app
 * More tests
 * Profiling
 * Dockerfile
+* Concurrent request (see below)
+
+### Concurrent request
+
+Running concurrent apache ab test shows some issues
+
+#### 1. Log output
+
+```
+ab -n 1000 -c 100 http://127.0.0.1:18080/hello
+```
+
+```
+(2016-09-17 12:29:00) [INFO    ] Request: 127.0.0.1:49719 0x7fcbba825000 HTTP/1.0 GET /hello
+(2016-09-17 12:29:00) [INFO    ] Response: 0x7fcbba825000 /hello 200 1
+(2016-09-17 12:29:00) [INFO    ] Request: 127.0.0.1:49721 0x7fcbba80c000 HTTP/1.0 GET /hello
+(2016-09-17 12:29:00) [INFO    ] Response: 0x7fcbba80c000 /hello 200 1
+(2016-09-17 10:45:10) [INFO    ] Response: 0x7fcbba02a000 /hello 200 1
+(2016-09-17 10:45:10) [INFO    ] Request: 127.0.0.1:58(921041 60-x079f-c1b7b a1807:64c50:01 0H)T T[PI/N1F.O0   G E T]  /Rheeqluleos
+t:( 2102176.-00.90-.117: 51809:5495 :01x07)f c[bIbNaF0O2 c 8 0 0]  HRTeTsPp/o1n.s0e :G E0Tx 7/fhceblblao8
+76(c20001 6/-h0e9l-l1o7  21000: 415
+:1(02)0 1[6I-N0F9O- 1 7   1]0 :R4e5s:p1o0n)s e[:I N0FxO7 f c b b]a 0R2ecq8u0e0s t/:h e1l2l7o. 02.000. 11:
+58916 0x7fcbba053400 HTTP/1.0 GET /hello
+(2016-09-17 10:45:10) [INFO    ] Response: 0x7fcbba053400 /hello 200 1
+```
+
+#### 2. Couchbase 
+
+Couchbase client seems not operate in async mode. 
+
+```
+ab -n 1000 -c 100 http://127.0.0.1:18080/users
+```
+
+```
+[warn] event_base_loop: reentrant invocation.  Only one event_base_loop can run on each event_base at once.
+```
 
 ## License
 
