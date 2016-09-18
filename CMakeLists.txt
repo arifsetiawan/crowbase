@@ -19,6 +19,3 @@ configure_file(config/config.toml
                COPYONLY)
                
 add_subdirectory(src)
-
-enable_testing()
-add_test(NAME APITest COMMAND "${CMAKE_SOURCE_DIR}/test/api.py")
