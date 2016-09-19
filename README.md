@@ -128,7 +128,8 @@ We need to make sure bucket are reset everytime we run test. You need to create 
 
 * Middleware example
 * Better CMake
-* Write tests
+* Error response to follow jsonapi
+* ~~Write tests~~
 * Dockerfile
 * Concurrent request handling (see below)
 
